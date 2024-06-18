@@ -1,4 +1,4 @@
-from structs.LabelLayout import LabelLayout
+from structs.LabelLayoutEngine import LabelLayout
 
 
 class _PrinterInterface:

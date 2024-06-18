@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/GAOS_Label_Printer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interfaces/_printer.pyi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/LabelLayout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/__init__.py" afterDir="false" />
+    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Initial Commit">
+      <change afterPath="$PROJECT_DIR$/structs/Elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/_printer.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/_printer.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/LabelLayout.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +39,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,11 +89,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718663218903</updated>
-      <workItem from="1718663220359" duration="1984000" />
+      <workItem from="1718663220359" duration="5225000" />
     </task>
+    <task id="LOCAL-00001" summary=" + Initial Commit">
+      <option name="closed" value="true" />
+      <created>1718665236115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718665236115</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" + Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value=" + Initial Commit" />
   </component>
 </project>
