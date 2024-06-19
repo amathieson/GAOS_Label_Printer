@@ -30,4 +30,5 @@ class LabelLayoutEngine:
         ...
 
     def renderLabel(self, layout: LabelLayout, data: LabelData):
-        ...
+        image = PIL.Image.new('RGBA', layout.Dimensions, (255, 255, 255, 255))
+        image.show("LabelLayoutEngine")
