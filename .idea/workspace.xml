@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" +  Progress on the Label Element">
-      <change afterPath="$PROJECT_DIR$/res/images/GAOS-logo-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/Elements/ImageElement.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/Elements/PDF417Code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/Elements/QRCode.py" afterDir="false" />
+    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/Elements/ImageElement.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/ImageElement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/structs/Elements/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/Label.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718663218903</updated>
       <workItem from="1718663220359" duration="7175000" />
-      <workItem from="1718816977465" duration="22611000" />
+      <workItem from="1718816977465" duration="23686000" />
     </task>
     <task id="LOCAL-00001" summary=" + Initial Commit">
       <option name="closed" value="true" />
@@ -137,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718840129872</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing">
+      <option name="closed" value="true" />
+      <created>1718896452887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718896452887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +153,7 @@
     <MESSAGE value=" + Start of Objects" />
     <MESSAGE value=" + Start of testing for layout engine" />
     <MESSAGE value=" +  Progress on the Label Element" />
-    <option name="LAST_COMMIT_MESSAGE" value=" +  Progress on the Label Element" />
+    <MESSAGE value=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing" />
   </component>
 </project>
