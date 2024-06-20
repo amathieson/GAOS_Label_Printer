@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Start of testing for layout engine">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/structs/Elements/__init__.py" afterDir="false" />
+    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" +  Progress on the Label Element">
+      <change afterPath="$PROJECT_DIR$/res/images/GAOS-logo-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/Elements/ImageElement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/Elements/PDF417Code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/Elements/QRCode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/Elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/Label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/Elements/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/Label.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/AdamM/PycharmProjects/GAOS_Label_Printer/structs/Elements",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +53,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\structs\Elements" />
+      <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\res\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\res\fonts" />
     </key>
@@ -97,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718663218903</updated>
       <workItem from="1718663220359" duration="7175000" />
-      <workItem from="1718816977465" duration="7585000" />
+      <workItem from="1718816977465" duration="22611000" />
     </task>
     <task id="LOCAL-00001" summary=" + Initial Commit">
       <option name="closed" value="true" />
@@ -123,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718790007567</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" +  Progress on the Label Element">
+      <option name="closed" value="true" />
+      <created>1718840129872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718840129872</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +147,7 @@
     <MESSAGE value=" + Initial Commit" />
     <MESSAGE value=" + Start of Objects" />
     <MESSAGE value=" + Start of testing for layout engine" />
-    <option name="LAST_COMMIT_MESSAGE" value=" + Start of testing for layout engine" />
+    <MESSAGE value=" +  Progress on the Label Element" />
+    <option name="LAST_COMMIT_MESSAGE" value=" +  Progress on the Label Element" />
   </component>
 </project>
