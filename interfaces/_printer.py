@@ -1,4 +1,6 @@
 from structs.LabelLayoutEngine import LabelLayout
+import PIL.Image
+
 
 
 class _PrinterInterface:
@@ -14,7 +16,7 @@ class _PrinterInterface:
     def get_additional_parameters(self) -> [(str, str)]:
         ...
 
-    def print(self, args: object) -> None:
+    def print(self, image: PIL.Image, dims: (int, int), **kwargs) -> None:
         ...
 
     def call_method(self, method_name: str):

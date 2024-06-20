@@ -36,7 +36,7 @@ class QRCode(_Element):
                 version=1,
                 error_correction=qrcode.constants.ERROR_CORRECT_H,
                 box_size=box_size,
-                border=0,
+                border=1,
             )
             box_size -= 1
             qr.add_data(self.get_qr_text(data))

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing">
+    <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Support for inversions on images&#10; + Alignment support on text">
+      <change afterPath="$PROJECT_DIR$/interfaces/_preview.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interfaces/pTouchPrinter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/structs/Elements/BarCode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/_printer.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/_printer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/Elements/ImageElement.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/ImageElement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/Elements/Label.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/Label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/Elements/QRCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/Elements/QRCode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +41,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/AdamM/PycharmProjects/GAOS_Label_Printer/structs/Elements",
+    "last_opened_file_path": "C:/Users/AdamM/PycharmProjects/GAOS_Label_Printer/interfaces",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +56,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\interfaces" />
       <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\structs\Elements" />
       <recent name="C:\Users\AdamM\PycharmProjects\GAOS_Label_Printer\res\images" />
     </key>
@@ -100,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1718663218903</updated>
       <workItem from="1718663220359" duration="7175000" />
-      <workItem from="1718816977465" duration="23686000" />
+      <workItem from="1718816977465" duration="41020000" />
     </task>
     <task id="LOCAL-00001" summary=" + Initial Commit">
       <option name="closed" value="true" />
@@ -142,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718896452887</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=" + Support for inversions on images&#10; + Alignment support on text">
+      <option name="closed" value="true" />
+      <created>1718897338754</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718897338754</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +168,10 @@
     <MESSAGE value=" + Start of testing for layout engine" />
     <MESSAGE value=" +  Progress on the Label Element" />
     <MESSAGE value=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing" />
+    <MESSAGE value=" + Support for inversions on images&#10; + Alignment support on text" />
+    <option name="LAST_COMMIT_MESSAGE" value=" + Support for inversions on images&#10; + Alignment support on text" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GAOS_Label_Printer$main.coverage" NAME="main Coverage Results" MODIFIED="1718900278936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

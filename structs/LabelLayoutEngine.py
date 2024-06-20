@@ -1,7 +1,9 @@
 from dataclasses import dataclass
 from typing import Literal
 import PIL.Image
-from PIL import ImageShow
+import io
+
+from PIL.Image import Image
 
 
 @dataclass
@@ -24,6 +26,7 @@ class LabelLayout:
     Name: str
     Elements: [(_Element, (int, int, int, int))]
     Dimensions: (int, int)
+    Background: str
 
 
 class LabelLayoutEngine:
@@ -32,8 +35,8 @@ class LabelLayoutEngine:
     def set_data(self, data: LabelData):
         self._data = data
 
-    def renderLabel(self, layout: LabelLayout):
-        image = PIL.Image.new('RGBA', layout.Dimensions, (255, 255, 255, 255))
+    def renderLabel(self, layout: LabelLayout) -> Image:
+        image = PIL.Image.new('RGB', layout.Dimensions, layout.Background)
         for element_tuple in layout.Elements:
             element_tuple[0].render(image, element_tuple[1], self._data)
-        image.show("LabelLayoutEngine")
+        return image
