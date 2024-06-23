@@ -1,16 +1,19 @@
+from data.DataFactory import DataFactory
 from interfaces._preview import previewPrinter
 from interfaces.pTouchPrinter import pTouchPrinter
-from structs.LabelLayoutEngine import LabelLayoutEngine, LabelData
+from structs.LabelLayoutEngine import LabelLayoutEngine
 
 _LabelLayoutEngine = None
 _Printers = []
+_DataFactory = None
 
 if __name__ == '__main__':
+    _DataFactory = DataFactory()
     _Printers.append(pTouchPrinter())
     _Printers.append(previewPrinter())
     _LabelLayoutEngine = LabelLayoutEngine()
-    _LabelLayoutEngine.set_data(LabelData(AssetName="zzTest", AssetID="A1B2C3", AssetTags="Test",
-                                          LocationName="zzLocation", LocationID="Z3Y2X1", ArrowDirection="NORTH"))
+    asset = _DataFactory.fetch_asset("A1B2C3")
+    _LabelLayoutEngine.set_data(asset)
 
     for printer in _Printers:
         print(f"Printer: {printer.get_name()}\t-\t{len(printer.get_layouts())} Layout(s) loaded")

@@ -101,7 +101,7 @@ class pTouchPrinter(_PrinterInterface):
             printer.tape_length = 0  # Set tape length (0 typically means auto length)
             printer.media_type = info.MediaType  # Set media type based on printer's media type
             printer.print_settings = PrintSettings.AutoCut  # Enable automatic cutting after printing
-            printer.advanced_settings = AdvancedPrintSettings.NotChainPrinting  # Disable chain printing mode
+            printer.advanced_settings = 0
             printer.print(b''.join(raster), dims[0], (14, 0))
 
     def call_method(self, method_name: str):

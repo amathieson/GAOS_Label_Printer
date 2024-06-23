@@ -5,15 +5,7 @@ import io
 
 from PIL.Image import Image
 
-
-@dataclass
-class LabelData:
-    AssetName: str
-    AssetID: str
-    AssetTags: str
-    LocationID: str
-    LocationName: str
-    ArrowDirection: Literal["NORTH", "EAST", "SOUTH", "WEST"]
+from data.LabelData import LabelData
 
 
 class _Element:
