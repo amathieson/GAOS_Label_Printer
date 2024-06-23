@@ -40,7 +40,7 @@ class DataFactory:
                          ArrowDirection=None, LocationName=dta[0]['data']['location_name'],
                          LocationID=dta[0]['data']['locationID'])
 
-    def fetch_location(self, location_id: str, direction: Literal["NORTH", "EAST", "SOUTH", "WEST"] or None)\
+    def fetch_location(self, location_id: str, direction: Literal["NORTH", "EAST", "SOUTH", "WEST"] or None) \
             -> LabelData:
         conn = http.client.HTTPSConnection(_API_SERVER, 443)
         conn.request("GET", "/gear/api/?getLocationData&location=" + location_id + "&token=" +

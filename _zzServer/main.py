@@ -2,6 +2,7 @@ import asyncio
 import websockets
 
 clients = set()
+printers = set()
 
 
 async def handler(websocket, path):
@@ -12,12 +13,23 @@ async def handler(websocket, path):
             # Assume the message format is "recipient:message"
             if ':' in message:
                 recipient_name, msg = message.split(':', 1)
-                # Find the recipient
-                recipient = next((ws for ws in clients if ws.remote_address[1] == int(recipient_name)), None)
-                if recipient:
-                    await recipient.send(msg)
+                if recipient_name == "SERVER":
+                    if msg == "AM_PRINTER":
+                        printers.add(websocket.remote_address[1])
+                        await websocket.send("OK")
+                    if msg == "GET_PRINTERS":
+                        if len(printers) == 0:
+                            await websocket.send("[]")
+                        else:
+                            printers_string = "','".join(str(s) for s in printers)
+                            await websocket.send(f"['{printers_string}']")
                 else:
-                    await websocket.send(f"Recipient {recipient_name} not found.")
+                    # Find the recipient
+                    recipient = next((ws for ws in clients if ws.remote_address[1] == int(recipient_name)), None)
+                    if recipient:
+                        await recipient.send(msg)
+                    else:
+                        await websocket.send(f"Recipient {recipient_name} not found.")
             else:
                 await websocket.send("Invalid message format. Use recipient:message.")
     except websockets.ConnectionClosed:
@@ -28,8 +40,8 @@ async def handler(websocket, path):
 
 
 async def main():
-    server = await websockets.serve(handler, "localhost", 5678)
-    await server.wait_closed()
+    async with websockets.serve(handler, "localhost", 5678):
+        await asyncio.Future()
 
 
 if __name__ == "__main__":

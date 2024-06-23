@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8db9730a-ee6a-42da-af43-172503a9d884" name="Changes" comment=" + Support for basic laminated lables">
-      <change afterPath="$PROJECT_DIR$/_zzServer/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/DataFactory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/LabelData.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_zzServer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/_zzServer/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/DataFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/DataFactory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/pTouchPrinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/pTouchPrinter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/structs/LabelLayoutEngine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "amathieson"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amathieson&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/amathieson/GAOS_Label_Printer.git",
-    "accountId": "db8c2044-8189-49b7-940a-2eadf6485b62"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/amathieson/GAOS_Label_Printer.git&quot;,
+    &quot;accountId&quot;: &quot;db8c2044-8189-49b7-940a-2eadf6485b62&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -119,7 +116,7 @@
       <updated>1718663218903</updated>
       <workItem from="1718663220359" duration="7175000" />
       <workItem from="1718816977465" duration="41476000" />
-      <workItem from="1719090780443" duration="6067000" />
+      <workItem from="1719090780443" duration="29422000" />
     </task>
     <task id="LOCAL-00001" summary=" + Initial Commit">
       <option name="closed" value="true" />
@@ -177,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718927577728</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=" + Start of networking code&#10; + Data fetching and factory">
+      <option name="closed" value="true" />
+      <created>1719101897085</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719101897085</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +196,8 @@
     <MESSAGE value=" + Add GAOS Logo&#10; + Add Fonts&#10; + Add Elements&#10; + More Testing" />
     <MESSAGE value=" + Support for inversions on images&#10; + Alignment support on text" />
     <MESSAGE value=" + Support for basic laminated lables" />
-    <option name="LAST_COMMIT_MESSAGE" value=" + Support for basic laminated lables" />
+    <MESSAGE value=" + Start of networking code&#10; + Data fetching and factory" />
+    <option name="LAST_COMMIT_MESSAGE" value=" + Start of networking code&#10; + Data fetching and factory" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GAOS_Label_Printer$main.coverage" NAME="main Coverage Results" MODIFIED="1718900278936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
