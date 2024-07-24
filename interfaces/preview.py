@@ -1,10 +1,7 @@
 import PIL.Image
 
 from interfaces._printer import _PrinterInterface
-from structs.Elements.Label import LabelElement
 from structs.LabelLayoutEngine import LabelLayout
-from pyPTouch.pTouchEnums import PrintSettings, AdvancedPrintSettings
-from pyPTouch.pTouchPrinter import PTouchPrinter
 
 
 class previewPrinter(_PrinterInterface):

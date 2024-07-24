@@ -1,5 +1,5 @@
 from data.DataFactory import DataFactory
-from interfaces._preview import previewPrinter
+from interfaces.preview import previewPrinter
 from interfaces.pTouchPrinter import pTouchPrinter
 from structs.LabelLayoutEngine import LabelLayoutEngine
 
