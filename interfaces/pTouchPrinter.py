@@ -1,11 +1,12 @@
 import PIL.Image
+from pyPTouch.pTouchStatusInformation import StatusInformation
 
 from interfaces._printer import _PrinterInterface
 from structs.Elements.ImageElement import ImageElement
 from structs.Elements.Label import LabelElement
 from structs.Elements.QRCode import QRCode
 from structs.LabelLayoutEngine import LabelLayout
-from pyPTouch.pTouchEnums import PrintSettings, AdvancedPrintSettings
+from pyPTouch.pTouchEnums import *
 from pyPTouch.pTouchPrinter import PTouchPrinter
 
 
@@ -52,186 +53,238 @@ class pTouchPrinter(_PrinterInterface):
             return 'None'
 
     def get_layouts(self) -> [LabelLayout]:
+        layouts = []
         try:
-            layouts = []
             with PTouchPrinter() as printer:
                 info = printer.get_information()
-                layouts.append(LabelLayout(f"PTouch STD {info.MediaWidth}mm {info.TextColour.name} on "
-                                           f"{info.TapeColour.name} {info.MediaType.name}", [
-                                               (
-                                                   LabelElement("{AssetID}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSansMono-Bold",
-                                                                ),
-                                                   (128, 40, 377, 116)),
-                                               (QRCode(content="GAOS_{AssetID}"),
-                                                (10, 10, 128, 128)),
-                                               (ImageElement(path="GAOS-logo-black.png",
-                                                             invert=(info.TextColour.name == "White")),
-                                                (226, 14, 293, 49)),
-                                           ], (391, 128), self.colours[info.TapeColour.name]))
-
-                layouts.append(LabelLayout(f"PTouch Cable STD {info.MediaWidth}mm {info.TextColour.name} on "
-                                           f"{info.TapeColour.name} {info.MediaType.name}", [
-                                               (
-                                                   LabelElement("{AssetID}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSansMono-Bold",
-                                                                ),
-                                                   (45, 0, 145, 15)),
-                                               (LabelElement("{AssetID}",
-                                                             text_colour=self.colours[info.TextColour.name],
-                                                             fill_colour=self.colours[info.TapeColour.name],
-                                                             alignment="C",
-                                                             font_name="NotoSansMono-Bold",
-                                                             ),
-                                                (45, 20, 145, 35)),
-                                               (LabelElement("{AssetID}",
-                                                             text_colour=self.colours[info.TextColour.name],
-                                                             fill_colour=self.colours[info.TapeColour.name],
-                                                             alignment="C",
-                                                             font_name="NotoSansMono-Bold",
-                                                             ),
-                                                (45, 40, 145, 55)),
-                                               (LabelElement("{AssetID}",
-                                                             text_colour=self.colours[info.TextColour.name],
-                                                             fill_colour=self.colours[info.TapeColour.name],
-                                                             alignment="C",
-                                                             font_name="NotoSansMono-Bold",
-                                                             ),
-                                                (45, 60, 145, 75)),
-                                               (LabelElement("{AssetID}",
-                                                             text_colour=self.colours[info.TextColour.name],
-                                                             fill_colour=self.colours[info.TapeColour.name],
-                                                             alignment="C",
-                                                             font_name="NotoSansMono-Bold",
-                                                             ),
-                                                (45, 80, 145, 95)),
-                                               (LabelElement("{AssetID}",
-                                                             text_colour=self.colours[info.TextColour.name],
-                                                             fill_colour=self.colours[info.TapeColour.name],
-                                                             alignment="C",
-                                                             font_name="NotoSansMono-Bold",
-                                                             ),
-                                                (45, 100, 145, 115)),
-                                               # (BarCode(content="{AssetID}", format="code39"),
-                                               #  (0, 0, 200, 128)),
-                                               (ImageElement(path="GAOS-logo-black90.png",
-                                                             invert=(info.TextColour.name == "White")),
-                                                (5, 5, 40, 72)),
-                                           ], (140, 128), self.colours[info.TapeColour.name]))
-
-                layouts.append(LabelLayout(f"PTouch Mini-XLR Mic Cables {info.MediaWidth}mm {info.TextColour.name} on "
-                                           f"{info.TapeColour.name} {info.MediaType.name}", [
-                                               (
-                                                   LabelElement("{AssetID}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSansMono-Bold",
-                                                                ),
-                                                   (128, 40, 377, 75)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 0, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 16, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 32, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 48, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 64, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 80, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 96, 398, 128)),
-                                               (
-                                                   LabelElement("|",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="L",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (391, 112, 398, 128)),
-                                               (
-                                                   LabelElement("{AssetID:<2}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSansMono_ExtraCondensed-Light",
-                                                                ),
-                                                   (410, 0, 450, 64)),
-                                               (
-                                                   LabelElement("{AssetID:<2}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSansMono_ExtraCondensed-Light",
-                                                                ),
-                                                   (410, 64, 450, 128)),
-                                               (
-                                                   LabelElement("{AssetName}",
-                                                                text_colour=self.colours[info.TextColour.name],
-                                                                fill_colour=self.colours[info.TapeColour.name],
-                                                                alignment="C",
-                                                                font_name="NotoSans-Light",
-                                                                ),
-                                                   (128, 90, 377, 110)),
-                                               (QRCode(content="GAOS_{AssetID:_<6}"),
-                                                (10, 10, 128, 128)),
-                                               (ImageElement(path="GAOS-logo-black.png",
-                                                             invert=(info.TextColour.name == "White")),
-                                                (215, 14, 293, 49)),
-                                           ], (465, 128), self.colours[info.TapeColour.name]))
-            return layouts
         except ValueError:
-            return []
+            info = StatusInformation(
+                HeadMark=0x80,
+                Size=0x20,
+                BrotherCode=0x42,
+                SeriesCode=0x30,
+                ModelCode=ModelCode(0x64),
+                CountryCode=0x30,
+                BatteryLevel=BatteryLevel.Unknown,
+                ExtendedError=ExtendedError.NoError,
+                ErrorInfo1=ErrorInfo1.NoError,
+                ErrorInfo2=ErrorInfo2.NoError,
+                MediaWidth=18,
+                MediaType=MediaType.LaminatedTape,
+                NumberColours=0,
+                Fonts=0,
+                JapaneseFonts=0,
+                Mode=DynamicMode.Raster,
+                Density=0,
+                MediaLength=0,
+                StatusType=StatusType.Reply_To_Status,
+                PhaseType=PhaseType.Editing,
+                PhaseNumber=0,
+                NotificationType=NotificationType.NotAvailable,
+                ExpansionArea=0,
+                TapeColour=TapeColor.Black,
+                TextColour=TextColor.White,
+                HardwareSettings=0,
+                Reserved3=0,
+                Reserved4=0,
+            )
+        layouts.append(LabelLayout(f"PTouch STD {info.MediaWidth}mm {info.TextColour.name} on "
+                                   f"{info.TapeColour.name} {info.MediaType.name}", [
+                                       (
+                                           LabelElement("{AssetID}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono-Bold",
+                                                        ),
+                                           (128, 40, 377, 116)),
+                                       (QRCode(content="GAOS_{AssetID}"),
+                                        (10, 10, 128, 128)),
+                                       (ImageElement(path="GAOS-logo-black.png",
+                                                     invert=(info.TextColour.name == "White")),
+                                        (226, 14, 293, 49)),
+                                   ], (391, 128), self.colours[info.TapeColour.name]))
+
+        layouts.append(LabelLayout(f"PTouch Cable STD {info.MediaWidth}mm {info.TextColour.name} on "
+                                   f"{info.TapeColour.name} {info.MediaType.name}", [
+                                       (
+                                           LabelElement("{AssetID}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono-Bold",
+                                                        ),
+                                           (45, 0, 145, 15)),
+                                       (LabelElement("{AssetID}",
+                                                     text_colour=self.colours[info.TextColour.name],
+                                                     fill_colour=self.colours[info.TapeColour.name],
+                                                     alignment="C",
+                                                     font_name="NotoSansMono-Bold",
+                                                     ),
+                                        (45, 20, 145, 35)),
+                                       (LabelElement("{AssetID}",
+                                                     text_colour=self.colours[info.TextColour.name],
+                                                     fill_colour=self.colours[info.TapeColour.name],
+                                                     alignment="C",
+                                                     font_name="NotoSansMono-Bold",
+                                                     ),
+                                        (45, 40, 145, 55)),
+                                       (LabelElement("{AssetID}",
+                                                     text_colour=self.colours[info.TextColour.name],
+                                                     fill_colour=self.colours[info.TapeColour.name],
+                                                     alignment="C",
+                                                     font_name="NotoSansMono-Bold",
+                                                     ),
+                                        (45, 60, 145, 75)),
+                                       (LabelElement("{AssetID}",
+                                                     text_colour=self.colours[info.TextColour.name],
+                                                     fill_colour=self.colours[info.TapeColour.name],
+                                                     alignment="C",
+                                                     font_name="NotoSansMono-Bold",
+                                                     ),
+                                        (45, 80, 145, 95)),
+                                       (LabelElement("{AssetID}",
+                                                     text_colour=self.colours[info.TextColour.name],
+                                                     fill_colour=self.colours[info.TapeColour.name],
+                                                     alignment="C",
+                                                     font_name="NotoSansMono-Bold",
+                                                     ),
+                                        (45, 100, 145, 115)),
+                                       # (BarCode(content="{AssetID}", format="code39"),
+                                       #  (0, 0, 200, 128)),
+                                       (ImageElement(path="GAOS-logo-black90.png",
+                                                     invert=(info.TextColour.name == "White")),
+                                        (5, 5, 40, 72)),
+                                   ], (140, 128), self.colours[info.TapeColour.name]))
+
+        layouts.append(LabelLayout(f"PTouch Mini-XLR Mic Cables {info.MediaWidth}mm {info.TextColour.name} on "
+                                   f"{info.TapeColour.name} {info.MediaType.name}", [
+                                       (
+                                           LabelElement("{AssetID}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono-Bold",
+                                                        ),
+                                           (128, 40, 377, 75)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 0, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 16, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 32, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 48, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 64, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 80, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 96, 398, 128)),
+                                       (
+                                           LabelElement("|",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="L",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (391, 112, 398, 128)),
+                                       (
+                                           LabelElement("{AssetID:<2}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono_ExtraCondensed-Light",
+                                                        ),
+                                           (410, 0, 450, 64)),
+                                       (
+                                           LabelElement("{AssetID:<2}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono_ExtraCondensed-Light",
+                                                        ),
+                                           (410, 64, 450, 128)),
+                                       (
+                                           LabelElement("{AssetName}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSans-Light",
+                                                        ),
+                                           (128, 90, 377, 110)),
+                                       (QRCode(content="GAOS_{AssetID:_<6}"),
+                                        (10, 10, 128, 128)),
+                                       (ImageElement(path="GAOS-logo-black.png",
+                                                     invert=(info.TextColour.name == "White")),
+                                        (215, 14, 293, 49)),
+                                   ], (465, 128), self.colours[info.TapeColour.name]))
+        layouts.append(LabelLayout(f"PTouch 2x Mic Cable Flags {info.MediaWidth}mm {info.TextColour.name} on "
+                                   f"{info.TapeColour.name} {info.MediaType.name}", [
+                                       (
+                                           LabelElement("{AssetID}",
+                                                        text_colour=self.colours[info.TextColour.name],
+                                                        fill_colour=self.colours[info.TapeColour.name],
+                                                        alignment="C",
+                                                        font_name="NotoSansMono-Bold",
+                                                        ),
+                                           (7, 2, 64, 64)),
+                                       (
+                                           QRCode(content="GAOS_{AssetID:_<6}",
+                                                  fill_color=self.colours[info.TextColour.name],
+                                                  back_color=self.colours[info.TapeColour.name] ),
+                                           (94, 9, 64, 64)
+                                       ),
+                                       (ImageElement(path="GAOS-logo-black.png",
+                                                     invert=(info.TextColour.name == "White")),
+                                        (0, 79, 64, 112)),
+                                       (ImageElement(path="GAOS-logo-black.png",
+                                                     invert=(info.TextColour.name == "White")),
+                                        (92, 79, 156, 112))
+                                   ], (156, 128), self.colours[info.TapeColour.name]))
+        return layouts
 
     def get_additional_methods(self) -> [str]:
         return []

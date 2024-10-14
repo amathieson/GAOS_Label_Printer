@@ -12,7 +12,7 @@ if __name__ == '__main__':
     _Printers.append(pTouchPrinter())
     _Printers.append(previewPrinter())
     _LabelLayoutEngine = LabelLayoutEngine()
-    asset = _DataFactory.fetch_asset("A1B2C3")
+    asset = _DataFactory.fetch_asset("AB")
     _LabelLayoutEngine.set_data(asset)
 
     for printer in _Printers:
@@ -20,5 +20,5 @@ if __name__ == '__main__':
         for layout in printer.get_layouts():
             print(f"\t\t{layout.Name}")
 
-    _Printers[0].print(_LabelLayoutEngine.renderLabel(_Printers[0].get_layouts()[0]),
-                       dims=_Printers[0].get_layouts()[0].Dimensions)
+    _Printers[1].print(_LabelLayoutEngine.renderLabel(_Printers[0].get_layouts()[3]),
+                       dims=_Printers[0].get_layouts()[3].Dimensions)
